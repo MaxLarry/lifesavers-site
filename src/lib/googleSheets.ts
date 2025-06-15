@@ -1,13 +1,12 @@
 import { google } from "googleapis";
 import { JWT } from "google-auth-library";
-import serviceAccount from "./psyched-oxide-463020-j8-a8a469129659.json"; // Adjust the path
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
-const SPREADSHEET_ID = "1As0MunPMVlXHkrOHds_cdxGoUha3amSPJVUnYycqtX8"; // Replace this
+const SPREADSHEET_ID = "1As0MunPMVlXHkrOHds_cdxGoUha3amSPJVUnYycqtX8";
 
 const auth = new google.auth.JWT({
-  email: serviceAccount.client_email,
-  key: serviceAccount.private_key,
+  email: process.env.GCP_CLIENT_EMAIL,
+  key: process.env.GCP_PRIVATE_KEY?.replace(/\\n/g, "\n"),
   scopes: SCOPES,
 });
 
