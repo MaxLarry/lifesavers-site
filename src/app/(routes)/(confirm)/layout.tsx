@@ -2,7 +2,7 @@ import { div } from "framer-motion/client";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Select Time",
+  title: "Confirm Booking",
   description:
     "Book your student drug testing appointment with Lifesaver. Fast, easy, and stress-free.",
 };
