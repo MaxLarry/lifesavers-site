@@ -83,7 +83,7 @@ export async function POST(req: Request) {
       { message: "Booking successful" },
       { status: 200 }
     );
-  } catch (err) {
+  } catch {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

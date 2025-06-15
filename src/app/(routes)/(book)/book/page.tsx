@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useMemo, useCallback} from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { format } from "date-fns";
@@ -27,33 +27,34 @@ const Book = () => {
     new Date(2025, 5, 25),
   ];
 
-  const availableTimes = [
-    "9:00 - 10:00 AM",
-    "10:00 - 11:00 AM",
-    "11:00 - 12:00 AM",
-    "1:00 - 2:00 PM",
-    "2:00 - 3:00 PM",
-    "3:00 - 4:00 PM",
-  ];
 
-  const isDateAvailable = (date: Date) => {
-    const now = new Date();
-    now.setHours(0, 0, 0, 0); // Midnight today
-    const inputDate = new Date(date);
-    inputDate.setHours(0, 0, 0, 0);
+const availableTimes = useMemo(() => [
+  "9:00 - 10:00 AM",
+  "10:00 - 11:00 AM",
+  "11:00 - 12:00 AM",
+  "1:00 - 2:00 PM",
+  "2:00 - 3:00 PM",
+  "3:00 - 4:00 PM",
+], []); // empty array means this array is constant
 
-    const isNotPast = inputDate >= now;
+const isDateAvailable = useCallback((date: Date) => {
+  const now = new Date();
+  now.setHours(0, 0, 0, 0); // Midnight today
+  const inputDate = new Date(date);
+  inputDate.setHours(0, 0, 0, 0);
 
-    return (
-      isNotPast &&
-      availableDates.some(
-        (d) =>
-          d.getDate() === date.getDate() &&
-          d.getMonth() === date.getMonth() &&
-          d.getFullYear() === date.getFullYear()
-      )
-    );
-  };
+  const isNotPast = inputDate >= now;
+
+  return (
+    isNotPast &&
+    availableDates.some(
+      (d) =>
+        d.getDate() === date.getDate() &&
+        d.getMonth() === date.getMonth() &&
+        d.getFullYear() === date.getFullYear()
+    )
+  );
+}, [availableDates]);
 
   const isTimeInPast = (timeStr: string, selectedDate: Date): boolean => {
     const now = new Date();
