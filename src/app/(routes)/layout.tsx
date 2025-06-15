@@ -43,13 +43,7 @@ export default function Layout({
         className="w-full lg:py-6 px-6 py-4 flex justify-center"
       >
         <p className="small">
-          <a
-            href="https:/larry-portry.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {year ?? "..."} &copy; All Rights Reserved, Lifesaver&apos;s
-          </a>
+          {year ?? "..."} &copy; All Rights Reserved, Lifesaver&apos;s
         </p>
       </motion.div>
     </div>
