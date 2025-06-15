@@ -20,7 +20,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
-import { supabase } from "@/src/lib/supabaseClient";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import LoadingSpinner from "@/src/components/LoadingSpinner";
@@ -98,7 +97,7 @@ const Confirm = () => {
         setShowDialog(true);
         form.reset();
       }
-    } catch (err) {
+    } catch {
       toast.error("Something went wrong.");
     } finally {
       setIsSending(false);
@@ -133,7 +132,7 @@ const Confirm = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [showDialog]);
+  }, [showDialog, router]);
 
   if (loading) {
     return (

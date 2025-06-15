@@ -68,7 +68,7 @@ const Book = () => {
     }
 
     // Extract start time and period properly
-    const [startTime, , period] = timeStr.split(" "); // "1:00", "-", "2:00", "PM" → [ '1:00', '-', '2:00', 'PM' ] is common format
+    const [startTime] = timeStr.split(" "); // "1:00", "-", "2:00", "PM" → [ '1:00', '-', '2:00', 'PM' ] is common format
     const [hourStr, minuteStr] = startTime.split(":");
     let hour = parseInt(hourStr);
     const minute = parseInt(minuteStr);
@@ -103,7 +103,7 @@ const Book = () => {
     if (savedTime && availableTimes.includes(savedTime)) {
       setTime(savedTime);
     }
-  }, []);
+  }, [availableTimes, isDateAvailable]);
 
   const fetchDisabledTimes = async (date: Date) => {
     if (!date) return;

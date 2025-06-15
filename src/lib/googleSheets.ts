@@ -1,5 +1,4 @@
 import { google } from "googleapis";
-import { JWT } from "google-auth-library";
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 const SPREADSHEET_ID = "1As0MunPMVlXHkrOHds_cdxGoUha3amSPJVUnYycqtX8";

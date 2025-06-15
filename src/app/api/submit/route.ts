@@ -68,16 +68,16 @@ export async function POST(req: Request) {
     }
 
     await appendToSheet([
-  firstName,
-  lastName,
-  middleName || "",
-  suffix || "",
-  campusProgram,
-  yearLevel,
-  email,
-  date,
-  time,
-]);
+      firstName,
+      lastName,
+      middleName || "",
+      suffix || "",
+      campusProgram,
+      yearLevel,
+      email,
+      date,
+      time,
+    ]);
 
     return NextResponse.json(
       { message: "Booking successful" },
