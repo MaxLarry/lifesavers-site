@@ -79,6 +79,7 @@
 }
 
 :root {
+  --radius: 0.625rem;
   --background: oklch(14.077% 0.0044 285.776 / 0.988);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
@@ -112,6 +113,9 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -119,6 +123,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+body {
+  font-family: "Larry-Regular", sans-serif;
 }
 
 @font-face {
@@ -175,5 +183,14 @@ p.medium {
 }
 p.small {
   font-size: clamp(11px, 3vw, 17px);
+  font-family: "Syne-Regular", sans-serif;
+}
+p.xsmall {
+  font-size: clamp(8px, 2.5vw, 15px);
+  font-family: "Syne-Regular", sans-serif;
+}
+
+span.xsmall {
+  font-size: clamp(8px, 2.5vw, 15px);
   font-family: "Syne-Regular", sans-serif;
 }
