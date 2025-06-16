@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Lifesaver from "@/src/image/Lifesavers.png";
 import { useState, useEffect } from "react";
 

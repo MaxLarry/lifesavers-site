@@ -88,7 +88,7 @@ const Confirm = () => {
         }),
       });
 
-      const result = await res.json();
+      // const result = await res.json();
 
       if (!res.ok) {
         toast.error("Booking failed: Server has a problem");
