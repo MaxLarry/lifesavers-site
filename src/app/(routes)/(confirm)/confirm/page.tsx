@@ -47,6 +47,7 @@ const Confirm = () => {
   const [date, setDate] = useState<string | null>(null);
   const [time, setTime] = useState<string | null>(null);
   const [showDialog, setShowDialog] = useState(false);
+  const [agreed, setAgreed] = useState(false);
   const [submittedData, setSubmittedData] = useState<BookingFormData | null>(
     null
   );
@@ -90,9 +91,9 @@ const Confirm = () => {
       const result = await res.json();
 
       if (!res.ok) {
-        toast.error("Booking failed: " + result.error);
+        toast.error("Booking failed: Server has a problem");
       } else {
-        toast.success("Booking confirmed!");
+        toast.success("Booking confirmed!, Thank you :)");
         setSubmittedData(data);
         setShowDialog(true);
         form.reset();
@@ -247,7 +248,9 @@ const Confirm = () => {
                           <FormItem className="flex-1">
                             <FormLabel>
                               Suffix
-                              <span className="xsmall text-white/30">(Optional)</span>
+                              <span className="xsmall text-white/30">
+                                (Optional)
+                              </span>
                             </FormLabel>
                             <FormControl>
                               <Input {...field} placeholder="" />
@@ -270,7 +273,9 @@ const Confirm = () => {
                         <FormItem className="flex-1">
                           <FormLabel>
                             Campus
-                            <span className="xsmall text-white/30">(Required)</span>
+                            <span className="xsmall text-white/30">
+                              (Required)
+                            </span>
                           </FormLabel>
                           <FormControl>
                             <Input {...field} placeholder="" />
@@ -294,7 +299,9 @@ const Confirm = () => {
                         <FormItem className="flex-1">
                           <FormLabel>
                             Year Level / Program
-                            <span className="xsmall text-white/30">(Required)</span>
+                            <span className="xsmall text-white/30">
+                              (Required)
+                            </span>
                           </FormLabel>
                           <FormControl>
                             <Input {...field} placeholder="" />
@@ -328,8 +335,33 @@ const Confirm = () => {
                         </FormItem>
                       )}
                     />
+                    <div className="flex items-start space-x-3">
+                      <input
+                        type="checkbox"
+                        id="agreeToTerms"
+                        checked={agreed}
+                        onChange={() => setAgreed(!agreed)}
+                        className="mt-1"
+                      />
+                      <label
+                        htmlFor="agreeToTerms"
+                        className="text-sm text-white"
+                      >
+                        I agree to the{" "}
+                        <a
+                          href="/terms-and-conditions"
+                          target="_blank"
+                          className="underline text-blue-300/50"
+                        >
+                          Terms and Conditions
+                        </a>
+                      </label>
+                    </div>
                     <div className="">
-                      <Button disabled={isSending} className="w-full mt-6">
+                      <Button
+                        disabled={!agreed || isSending}
+                        className="w-full mt-6"
+                      >
                         {isSending && (
                           <div className="w-5 h-5 border-4 border-gray-300 border-t-black rounded-full animate-spin" />
                         )}

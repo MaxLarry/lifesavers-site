@@ -17,24 +17,19 @@ const Book = () => {
   const router = useRouter();
 
   const availableDates = [
-    new Date(2025, 5, 11),
-    new Date(2025, 5, 12),
-    new Date(2025, 5, 17),
-    new Date(2025, 5, 16),
+    new Date(2025, 5, 18),
+    new Date(2025, 5, 19),
     new Date(2025, 5, 20),
-    new Date(2025, 5, 22),
-    new Date(2025, 5, 23),
-    new Date(2025, 5, 25),
+    new Date(2025, 5, 21),
   ];
 
 
   const availableTimes = [
-    "9:00 - 10:00 AM",
-    "10:00 - 11:00 AM",
-    "11:00 - 12:00 AM",
-    "1:00 - 2:00 PM",
-    "2:00 - 3:00 PM",
-    "3:00 - 4:00 PM",
+    "7:00 - 9:00 AM",
+    "9:00 - 11:00 AM",
+    "11:00 - 11:59 AM",
+    "1:30 - 3:00 PM",
+    "3:00 - 5:00 PM",
   ];
 
   const isDateAvailable = (date: Date) => {

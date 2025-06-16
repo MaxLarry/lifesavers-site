@@ -19,7 +19,7 @@ export async function GET(req: Request) {
   }
 
   const fullSlots = data
-    .filter((slot) => slot.count >= 41)
+    .filter((slot) => slot.count >= 50)
     .map((slot) => slot.time);
 
   return NextResponse.json({ fullSlots });
