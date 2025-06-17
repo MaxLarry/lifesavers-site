@@ -201,7 +201,11 @@ const Confirm = () => {
                               <p className="xsmall text-white/30">(Required)</p>
                             </FormLabel>
                             <FormControl>
-                              <Input {...field} placeholder="" />
+                              <Input
+                                {...field}
+                                placeholder=""
+                                disabled={isSending}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -217,7 +221,11 @@ const Confirm = () => {
                               <p className="xsmall text-white/30">(Required)</p>
                             </FormLabel>
                             <FormControl>
-                              <Input {...field} placeholder="" />
+                              <Input
+                                {...field}
+                                placeholder=""
+                                disabled={isSending}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -237,7 +245,11 @@ const Confirm = () => {
                               </span>
                             </FormLabel>
                             <FormControl>
-                              <Input {...field} placeholder="" />
+                              <Input
+                                {...field}
+                                placeholder=""
+                                disabled={isSending}
+                              />
                             </FormControl>
                             <FormDescription>
                               <span className="xsmall text-white/30">
@@ -261,7 +273,11 @@ const Confirm = () => {
                               </span>
                             </FormLabel>
                             <FormControl>
-                              <Input {...field} placeholder="" />
+                              <Input
+                                {...field}
+                                placeholder=""
+                                disabled={isSending}
+                              />
                             </FormControl>
                             <FormDescription>
                               <span className="xsmall text-white/30">
@@ -286,7 +302,11 @@ const Confirm = () => {
                             </span>
                           </FormLabel>
                           <FormControl>
-                            <Input {...field} placeholder="" />
+                            <Input
+                              {...field}
+                              placeholder=""
+                              disabled={isSending}
+                            />
                           </FormControl>
                           <FormDescription>
                             <span className="xsmall text-white/30">
@@ -312,7 +332,11 @@ const Confirm = () => {
                             </span>
                           </FormLabel>
                           <FormControl>
-                            <Input {...field} placeholder="" />
+                            <Input
+                              {...field}
+                              placeholder=""
+                              disabled={isSending}
+                            />
                           </FormControl>
                           <FormDescription>
                             <span className="xsmall text-white/30">
@@ -337,7 +361,11 @@ const Confirm = () => {
                             <p className="xsmall text-white/30">(Required)</p>
                           </FormLabel>
                           <FormControl>
-                            <Input {...field} placeholder="" />
+                            <Input
+                              {...field}
+                              placeholder=""
+                              disabled={isSending}
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -352,7 +380,8 @@ const Confirm = () => {
                           <FormControl>
                             <Input
                               {...field}
-                              placeholder="your_email_here@example.com"
+                              placeholder="lifesavers.drugtest@booking.com"
+                              disabled={isSending}
                             />
                           </FormControl>
                           <FormMessage />
@@ -366,6 +395,7 @@ const Confirm = () => {
                         checked={agreed}
                         onChange={() => setAgreed(!agreed)}
                         className="mt-1"
+                        disabled={isSending}
                       />
                       <label
                         htmlFor="agreeToTerms"
@@ -403,7 +433,7 @@ const Confirm = () => {
       </div>
       {showDialog && submittedData && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-6">
-          <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-md text-black">
+          <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-md text-black border-t-8 border-amber-500">
             <h2 className="text-center font-semibold mb-3">
               Booking Confirmed
             </h2>
@@ -416,7 +446,11 @@ const Confirm = () => {
               confirmation. Show it at the venue to secure your{" "}
               <span className="text-blue-600 font-semibold">priority spot</span>{" "}
               at your selected time. Don&apos;t ghost your booking — we&apos;re
-              counting on you! 😎
+              counting on you! 😎 <br />
+              <span className="font-medium text-black">
+                Please bring a valid ID for verification purposes. <br />
+                Thank you.
+              </span>
             </p>
             <Separator
               orientation="horizontal"
@@ -429,8 +463,13 @@ const Confirm = () => {
                 {submittedData.suffix || ""}
               </p>
               <p className="small">
-                <strong>Email:</strong> {submittedData.email}
+                <strong>Contact:</strong> {submittedData.phoneNumber}
               </p>
+              {submittedData.email && (
+                <p className="small">
+                  <strong>Email:</strong> {submittedData.email}
+                </p>
+              )}
               <p className="small">
                 <strong>Campus:</strong> {submittedData.campusProgram}
               </p>

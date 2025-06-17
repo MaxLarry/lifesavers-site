@@ -39,7 +39,7 @@ const TermsCondition = () => {
           <p className="small">
             3.1 All bookings are final.
             <br />
-            3.2 No cancellations, reschedules, or refunds will be allowed for
+            3.2 No cancellations, reschedules will be allowed for
             missed appointments.
           </p>
 
