@@ -180,7 +180,7 @@ const Confirm = () => {
             </div>
                       <p className="medium text-white mt-3">
             <span className="text-red-600 font-black">Note: </span>The available
-            dates are for <strong>Brooke's Point</strong> venue only. For updates, please follow
+            dates are for <strong>Brooke&apos;s Point</strong> venue only. For updates, please follow
             our{" "}
             <a
               href="/terms-and-conditions"
