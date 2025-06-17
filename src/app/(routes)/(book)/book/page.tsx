@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { format } from "date-fns";
@@ -22,7 +22,6 @@ const Book = () => {
     new Date(2025, 5, 20),
     new Date(2025, 5, 21),
   ];
-
 
   const availableTimes = [
     "7:00 - 9:00 AM",
@@ -124,22 +123,34 @@ const Book = () => {
   return (
     <div className="flex justify-center min-h-full py-9 my-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col lg:flex-row bg-cyan-900 shadow-lg rounded-2xl w-full sm:max-w-screen-lg ">
-        <div className="lg:p-9 p-6 lg:w-xl">
-            <div className="flex mb-7">
-              <div
-                onClick={() => {
-                  Cookies.remove("selectedTime");
-                  router.back();
-                }}
-                className="cursor-pointer flex py-1 px-3 rounded-2xl items-center gap-3 border border-red-700 bg-black/50"
-              >
-                <ArrowLeft />
-                <p>Back</p>
-              </div>
+        <div className="lg:p-9 p-6 pb-0 lg:w-xl">
+          <div className="flex mb-7">
+            <div
+              onClick={() => {
+                Cookies.remove("selectedTime");
+                router.back();
+              }}
+              className="cursor-pointer flex py-1 px-3 rounded-2xl items-center gap-3 border border-red-700 bg-black/50"
+            >
+              <ArrowLeft />
+              <p>Back</p>
             </div>
+          </div>
           <h2 className="uppercase">Lifesaver&apos;s</h2>
           <p className="medium text-white/45 mt-3">
             Please choose a Date and Time.
+          </p>
+          <p className="medium text-white mt-3">
+            <span className="text-red-600 font-black">Note: </span>The available
+            dates are for <strong>Brooke's Point</strong> venue only. For updates, please follow
+            our{" "}
+            <a
+              href="/terms-and-conditions"
+              target="_blank"
+              className="text-blue-600"
+            >
+              Facebook page.
+            </a>
           </p>
         </div>
         <div className="w-full lg:p-9 p-6">
@@ -193,7 +204,10 @@ const Book = () => {
                       onClick={() => {
                         setTime(t);
                         if (date) {
-                          Cookies.set("selectedDate", format(date, "yyyy-MM-dd"));
+                          Cookies.set(
+                            "selectedDate",
+                            format(date, "yyyy-MM-dd")
+                          );
                           Cookies.set("selectedTime", t);
                           router.push("/confirm"); // Navigate after setting cookies
                         }
