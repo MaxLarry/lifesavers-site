@@ -154,11 +154,23 @@ body {
   font-family: Syne-Regular;
   src: url("../fonts/syne/Syne-Regular.ttf");
 }
+@font-face {
+  font-family: John-Black;
+  src: url("../fonts/montserrat/Montserrat-Black.ttf");
+}
+@font-face {
+  font-family: John-Bold;
+  src: url("../fonts/montserrat/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: John-ExtraBold;
+  src: url("../fonts/montserrat/Montserrat-ExtraBold.ttf");
+}
 
 h1 {
   font-size: clamp(32px, 9vw, 70px);
   line-height: 1;
-  font-family: "Larry-ExtraBold", sans-serif;
+  font-family: "John-ExtraBold", sans-serif;
 }
 
 h2 {

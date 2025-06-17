@@ -34,7 +34,10 @@ export default function Home() {
       </motion.div>
       <div className="flex flex-col justify-center min-h-full py-5 gap-3 my-auto px-4 sm:px-6 lg:px-5">
         <div className="flex flex-col justify-center items-center text-center gap-2">
-          <h1 className="uppercase">Lifesaver&apos;s</h1>
+          <h1 className="uppercase text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-white via-yellow-300 via-white to-yellow-500">
+  Lifesaver&apos;s
+</h1>
+
           <p className="small">
             Need a drug test for enrollment or org requirements?
             Lifesaver&apos;s got you. Fast bookings, chill vibe, and results you
