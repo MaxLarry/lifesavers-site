@@ -35,10 +35,17 @@ const bookingSchema = z.object({
   suffix: z.string().optional(),
   campusProgram: z.string().min(2, "Campus program is required"),
   yearLevel: z.string().min(2, "Year level/ Program is required"),
+  phoneNumber: z
+    .string()
+    .min(11, "Phone number must be 11 digits")
+    .max(11, "Phone number must be 11 digits")
+    .regex(/^\d{11}$/, "Phone number must contain only digits"),
   email: z
     .string()
-    .min(1, "Email is required")
-    .regex(emailRegex, "Enter a valid email address"),
+    .optional()
+    .refine((val) => !val || emailRegex.test(val), {
+      message: "Enter a valid email address",
+    }),
 });
 
 const Confirm = () => {
@@ -62,6 +69,7 @@ const Confirm = () => {
       suffix: "",
       campusProgram: "",
       yearLevel: "",
+      phoneNumber: "",
       email: "",
     },
   });
@@ -315,6 +323,22 @@ const Confirm = () => {
                               <br />
                             </span>
                           </FormDescription>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="phoneNumber"
+                      render={({ field }) => (
+                        <FormItem className="flex-1">
+                          <FormLabel>
+                            Phone number
+                            <p className="xsmall text-white/30">(Required)</p>
+                          </FormLabel>
+                          <FormControl>
+                            <Input {...field} placeholder="" />
+                          </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
