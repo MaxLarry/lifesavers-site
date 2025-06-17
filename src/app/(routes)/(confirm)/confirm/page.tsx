@@ -178,18 +178,19 @@ const Confirm = () => {
                 <strong>Time:</strong> {time || "No time selected"}
               </p>
             </div>
-                      <p className="medium text-white mt-3">
-            <span className="text-red-600 font-black">Note: </span>The available
-            dates are for <strong>Brooke&apos;s Point</strong> venue only. For updates, please follow
-            our{" "}
-            <a
-              href="/terms-and-conditions"
-              target="_blank"
-              className="text-blue-600"
-            >
-              Facebook page.
-            </a>
-          </p>
+            <p className="medium text-white mt-3">
+              <span className="text-red-600 font-black">Note: </span>The
+              available dates are for <strong>Brooke&apos;s Point</strong> venue
+              only. For updates, please follow our{" "}
+              <a
+                href="https://www.facebook.com/profile.php?id=100054367578630"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600"
+              >
+                Facebook page.
+              </a>
+            </p>
           </div>
 
           <div className="w-full lg:p-9 py-6 px-6 pt-0">
