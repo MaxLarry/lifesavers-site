@@ -180,8 +180,8 @@ const Confirm = () => {
             </div>
             <p className="medium text-white mt-3">
               <span className="text-red-600 font-black">Note: </span>The
-              available dates are for <strong>Brooke&apos;s Point</strong> venue
-              only. For updates, please follow our{" "}
+              available dates are for <strong>EL NIDO</strong>(June 25-26) and <strong>TAYTAY</strong>(June 28-29) venue only. For
+            updates, please follow our{" "}
               <a
                 href="https://www.facebook.com/profile.php?id=100054367578630"
                 target="_blank"

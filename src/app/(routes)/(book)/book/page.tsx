@@ -17,18 +17,19 @@ const Book = () => {
   const router = useRouter();
 
   const availableDates = [
-    new Date(2025, 5, 18),
-    new Date(2025, 5, 19),
-    new Date(2025, 5, 20),
-    new Date(2025, 5, 21),
+    new Date(2025, 5, 25),
+    new Date(2025, 5, 26),
+    new Date(2025, 5, 28),
+    new Date(2025, 5, 29),
   ];
 
   const availableTimes = [
-    "7:00 - 9:00 AM",
-    "9:00 - 11:00 AM",
-    "11:00 - 11:59 AM",
-    "1:30 - 3:00 PM",
-    "3:00 - 5:00 PM",
+    "8:00 - 9:00 AM",
+    "9:00 - 10:00 AM",
+    "10:00 - 11:00 AM",
+    "1:00 - 2:00 PM",
+    "2:00 - 3:00 PM",
+    "3:00 - 4:00 PM",
   ];
 
   const isDateAvailable = (date: Date) => {
@@ -142,7 +143,7 @@ const Book = () => {
           </p>
           <p className="medium text-white mt-3">
             <span className="text-red-600 font-black">Note: </span>The available
-            dates are for <strong>Brooke&apos;s Point</strong> venue only. For
+            dates are for <strong>EL NIDO</strong>(June 25-26) and <strong>TAYTAY</strong>(June 28-29) venue only. For
             updates, please follow our{" "}
             <a
               href="https://www.facebook.com/profile.php?id=100054367578630"
