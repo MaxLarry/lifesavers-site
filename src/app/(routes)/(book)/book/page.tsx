@@ -17,10 +17,10 @@ const Book = () => {
   const router = useRouter();
 
   const availableDates = [
-    new Date(2025, 6, 1),
-    new Date(2025, 6, 2),
-    new Date(2025, 6, 3),
-    new Date(2025, 6, 4),
+    new Date(2025, 6, 8),
+    new Date(2025, 6, 9),
+    new Date(2025, 6, 10),
+    new Date(2025, 6,11),
   ];
 
   const availableTimes = [
@@ -143,7 +143,7 @@ const Book = () => {
           </p>
           <p className="medium text-white mt-3">
             <span className="text-red-600 font-black">Note: </span>The available
-            dates are for <strong>ROXAS PALAWAN</strong> (July 1-4) venue only. For
+            dates are for <strong>CORON PALAWAN</strong> (July 7-9) and <strong>ROXAS PALAWAN</strong> (July 9-11) venue only. For
             updates, please follow our{" "}
             <a
               href="https://www.facebook.com/profile.php?id=100054367578630"
